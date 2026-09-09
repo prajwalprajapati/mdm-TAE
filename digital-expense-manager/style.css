@@ -1,0 +1,93 @@
+/* Custom Stylesheet - SpendWise Digital Expense Manager */
+
+/* Custom Scrollbar for greyish-black theme */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #a1a1aa;
+  border-radius: 9999px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #3f3f46;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #71717a;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #52525b;
+}
+
+/* Glassmorphism & subtle border lighting */
+.dark .card-glow {
+  box-shadow: 0 0 20px -5px rgba(0, 0, 0, 0.5);
+}
+
+/* Radio button active style states */
+#radioExpense:checked + i,
+#radioExpense:checked ~ span {
+  color: #f43f5e;
+}
+.radio-expense-active {
+  background-color: #ffffff;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  color: #e11d48 !important;
+}
+.dark .radio-expense-active {
+  background-color: #18181b;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.4);
+  color: #fb7185 !important;
+}
+
+.radio-income-active {
+  background-color: #ffffff;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  color: #059669 !important;
+}
+.dark .radio-income-active {
+  background-color: #18181b;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.4);
+  color: #34d399 !important;
+}
+
+/* Fade In Animations */
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.97) translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.animate-in {
+  animation: fadeInScale 0.18s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Chart Canvas container sizing */
+canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Print styling for project documentation reports */
+@media print {
+  header, footer, #openAddModalBtn, #optionsDropdown, .no-print {
+    display: none !important;
+  }
+  body {
+    background: white !important;
+    color: black !important;
+  }
+}
