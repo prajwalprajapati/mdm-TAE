@@ -177,26 +177,26 @@ function updateSummaryAndBalancer() {
 
   if (totalFlow === 0) {
     healthLabel.textContent = 'No Activity';
-    healthLabel.className = 'text-center font-semibold text-zinc-500 text-[11px]';
+    healthLabel.className = 'text-center font-semibold text-[10px] sm:text-xs px-2 py-0.5 rounded-md bg-zinc-200/60 dark:bg-brand-800/80 text-zinc-500';
     liveDot.className = 'w-2 h-2 rounded-full bg-zinc-500';
   } else if (netBalance > (totalIncome * 0.3)) {
     healthLabel.textContent = 'Surplus (Healthy)';
-    healthLabel.className = 'text-center font-semibold text-emerald-500 text-[11px]';
+    healthLabel.className = 'text-center font-semibold text-[10px] sm:text-xs px-2 py-0.5 rounded-md bg-emerald-100 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400';
     liveDot.className = 'w-2 h-2 rounded-full bg-emerald-500';
   } else if (netBalance >= 0) {
     healthLabel.textContent = 'Balanced Flow';
-    healthLabel.className = 'text-center font-semibold text-indigo-400 text-[11px]';
+    healthLabel.className = 'text-center font-semibold text-[10px] sm:text-xs px-2 py-0.5 rounded-md bg-indigo-100 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400';
     liveDot.className = 'w-2 h-2 rounded-full bg-indigo-500';
   } else {
-    healthLabel.textContent = 'Deficit (Overspending)';
-    healthLabel.className = 'text-center font-semibold text-rose-500 text-[11px]';
+    healthLabel.textContent = 'Deficit (Alert)';
+    healthLabel.className = 'text-center font-semibold text-[10px] sm:text-xs px-2 py-0.5 rounded-md bg-rose-100 dark:bg-rose-950/60 text-rose-600 dark:text-rose-400';
     liveDot.className = 'w-2 h-2 rounded-full bg-rose-500 animate-pulse';
   }
 
   // Budget Tracker
   const budgetUsedPct = Math.min(100, Math.round((totalExpense / monthlyBudget) * 100));
   const budgetRem = Math.max(0, monthlyBudget - totalExpense);
-  document.getElementById('budgetSpentText').textContent = `Budget: ${budgetUsedPct}% used (${formatINR(totalExpense)} / ${formatINR(monthlyBudget)})`;
+  document.getElementById('budgetSpentText').textContent = `Budget: ${budgetUsedPct}% used (${formatINR(totalExpense)})`;
   document.getElementById('budgetRemainingText').textContent = `Remaining: ${formatINR(budgetRem)}`;
 
   // Top Spend Category
