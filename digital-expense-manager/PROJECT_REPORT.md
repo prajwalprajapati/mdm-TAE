@@ -13,7 +13,7 @@
 ### TAE DETAILS
 - **Topic Name**: Digital Expense Manager with Charts UI
 - **Student Name**: Prajwal Prajapati
-- **Email Address**: prajwal@gmail.com
+- **Email Address**: prajwalprajapati88@gmail.com
 - **Technology Stack**: HTML5, Tailwind CSS CDN, Vanilla JavaScript (ES6+), Chart.js, LocalStorage
 - **Deployment Platform**: GitHub Pages
 
